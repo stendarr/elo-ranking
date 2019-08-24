@@ -60,8 +60,8 @@ try:
         E_a = 1/(1 + (10**((R_b - R_a)/400)))
         E_b = 1/(1 + (10**((R_a - R_b)/400)))
 
-        inpt = input("\nWhich one is better?\n[1] "+str(element_a[0])
-        +" or [2] "+str(element_b[0])+"\nEnter 3 if they're equal.\n")
+        inpt = str(input("\nWhich one is better?\n[1] "+str(element_a[0])
+        +" or [2] "+str(element_b[0])+"\nEnter 3 if they're equal.\n"))
 
         if "1" in inpt:
             # Calculate Elo
