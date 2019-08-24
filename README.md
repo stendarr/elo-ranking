@@ -1,4 +1,13 @@
+# What? Why?
+
+This is a rating system in Python based on the [Elo rating system](https://en.wikipedia.org/wiki/Elo_rating_system) created by Arpad Elo. You can use it on lists and do all kinds of fun stuff, like finding out what your favourite vegetable is.
+
+_But why use the Elo system? Surely you can rank vegetables in O(n log(n)) time instead?_
+
+The Elo system is designed to work over longer periods of time. Let's say cabbage is your favourite vegetable but one day you wake up and feel a sudden urge to eat some lettuce. In that moment you may rank lettuce higher than cabbage but in the grand scheme of things cabbage is still your favourite vegetable. Simple ranking-based rating systems do not take this into account.
+
 # Usage
+
 ## Filename
 You can either enter the filename when prompted or hard-code it in the source.
 
@@ -37,5 +46,5 @@ Another legal example:
 
     Potato, 3, 990
 
-## Actual Ranking
+## Actual Rating
 You'll be presented with two options. Enter `1` or `2` to decide which is better. If you get bored press `Ctrl+C`.
