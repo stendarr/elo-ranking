@@ -9,7 +9,7 @@ The Elo system is designed to work over longer periods of time. Let's say cabbag
 # Usage
 
 ## Filename
-You can either enter the filename when prompted or hard-code it in the source.
+You can either enter the filename when prompted or hard-code it in the source. You can enter the filename without the `.txt` suffix.
 
 ## File Format
 You can use this script on any text list in the following format:
