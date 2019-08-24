@@ -57,7 +57,7 @@ try:
         E_a = 1/(1 + (10**((R_b - R_a)/400)))
         E_b = 1/(1 + (10**((R_a - R_b)/400)))
 
-        inpt = input("Which one is better?\n\n[1] "+str(element_a[0])+"\nor\n[2] "+str(element_b[0])+"\n?\n")
+        inpt = input("\nWhich one is better?\n[1] "+str(element_a[0])+" or [2] "+str(element_b[0])+"\nEnter 3 if they're equal.\n")
 
         if "1" in inpt:
             # Calculate Elo
@@ -73,8 +73,16 @@ try:
             # Increment counter
             element_a[1] += 1
             element_b[1] += 1
+        elif "3" in inpt:
+            # Calculate elo
+            element_b[2] = R_b + k*(0.5-E_b)
+            element_a[2] = R_a + k*(0.5-E_a)
+            # Increment counter
+            element_a[1] += 1
+            element_b[1] += 1
+
         else:
-            print("Are you taking the piss? Enter 1 or 2.\n")
+            print("Are you taking the piss? Enter 1, 2, or 3.\n")
 # Stop on ctrl+c
 except KeyboardInterrupt as e:
     print("\n")
