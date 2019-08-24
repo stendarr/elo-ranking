@@ -2,7 +2,10 @@ from random import randint
 import os.path, sys
 
 # Take filename from input or directly state it in the script:
-filename = input("Enter the filename of the list: ").strip()
+if len(sys.argv) == 2:
+    filename = sys.argv[1]
+else:
+    filename = input("Enter the filename of the list: ").strip()
 #filename = 'test_list.txt'
 if not os.path.isfile(filename):
     if os.path.isfile(filename+".txt"):
@@ -57,8 +60,8 @@ try:
         E_a = 1/(1 + (10**((R_b - R_a)/400)))
         E_b = 1/(1 + (10**((R_a - R_b)/400)))
 
-        inpt = input("\nWhich one is better?\n[1] "+str(element_a[0])+" or [2] "
-        +str(element_b[0])+"\nEnter 3 if they're equal.\n")
+        inpt = input("\nWhich one is better?\n[1] "+str(element_a[0])
+        +" or [2] "+str(element_b[0])+"\nEnter 3 if they're equal.\n")
 
         if "1" in inpt:
             # Calculate Elo
