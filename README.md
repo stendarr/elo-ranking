@@ -47,4 +47,4 @@ Another legal example:
     Potato, 3, 990
 
 ## Actual Rating
-You'll be presented with two options. Enter `1` or `2` to decide which is better. If you get bored press `Ctrl+C`.
+You'll be presented with two options. Enter `1` or `2` to decide which is better. If you're undecided enter `3` and when you get bored press `Ctrl+C`.
