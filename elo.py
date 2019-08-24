@@ -1,10 +1,16 @@
 from random import randint
+import os.path, sys
 
 # Take filename from input or directly state it in the script:
 filename = input("Enter the filename of the list: ").strip()
-lines = [line.rstrip('\n') for line in open(filename)]
 #filename = 'test_list.txt'
-#lines = [line.rstrip('\n') for line in open(filename)]
+if not os.path.isfile(filename):
+    if os.path.isfile(filename+".txt"):
+        filename += ".txt"
+    else:
+        print("File not found.")
+        sys.exit(1)
+lines = [line.rstrip('\n') for line in open(filename)]
 
 # This is the parameter which makes "wins" more or less important
 # In normal chess games this is usually 20
@@ -34,6 +40,15 @@ try:
         while a == b:
             b = randint(0,l-1)
 
+        min = [0, 9999, 0]
+        min_index = 0
+        for i in list:
+            if i[1] < min[1]:
+                min = i
+                min_index = list.index(i)
+        if a != min_index:
+            b = min_index
+
         # Get elo and calculate expected value
         element_a = list[a]
         element_b = list[b]
@@ -62,7 +77,9 @@ try:
             print("Are you taking the piss? Enter 1 or 2.\n")
 # Stop on ctrl+c
 except KeyboardInterrupt as e:
-    print(list)
+    print("\n")
+    for i in list:
+        print(i)
 
 write_string = ''
 # Stores the elements sorted by their ranks
