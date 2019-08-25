@@ -12,6 +12,8 @@ The Elo system is designed to work over longer periods of time. Let's say cabbag
 You can either enter the filename when prompted or hard-code it in the source. You can enter the filename without the `.txt` suffix. If you're feeling particularly cool you can pass the filename as a commandline argument:
 `python3 elo.py test_list`
 
+If you want to reset your list you can add `init` as an argument when running the command: `python3 elo.py test_list init`
+
 ## File Format
 You can use this script on any text list in the following format:
 

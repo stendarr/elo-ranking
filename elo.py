@@ -2,7 +2,7 @@ from random import randint
 import os.path, sys
 
 # Take filename from input or directly state it in the script:
-if len(sys.argv) == 2:
+if len(sys.argv) >= 2:
     filename = sys.argv[1]
 else:
     filename = input("Enter the filename of the list: ").strip()
@@ -21,11 +21,17 @@ k = 45.0
 
 list = []
 for i in lines:
+    # Skip line if empty
     if i.strip() == "":
         continue
     splitted = i.split(",")
     element_name = splitted[0].strip()
+    # Initialize with 0, 1000 if only name
     if len(splitted) == 1:
+        count = 0.0
+        elo = 1000.0
+    # Initialize with 0, 1000 if second cl argument is init
+    elif len(sys.argv) == 3 and sys.argv[2] == 'init':
         count = 0.0
         elo = 1000.0
     else:
@@ -84,7 +90,6 @@ try:
             # Increment counter
             element_a[1] += 1
             element_b[1] += 1
-
         else:
             print("Are you taking the piss? Enter 1, 2, or 3.\n")
 # Stop on ctrl+c
