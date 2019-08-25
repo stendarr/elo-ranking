@@ -48,7 +48,7 @@ try:
         b = randint(0,l-1)
         while a == b:
             b = randint(0,l-1)
-
+        # Get one of the least tested items
         min = [0, 9999, 0]
         min_index = 0
         for i in list:
@@ -58,7 +58,7 @@ try:
         if a != min_index:
             b = min_index
 
-        # Get elo and calculate expected value
+        # Get elo from selected elements and calculate their expected value
         element_a = list[a]
         element_b = list[b]
         R_a = element_a[2]
@@ -70,21 +70,21 @@ try:
         +" or [2] "+str(element_b[0])+"\nEnter 3 if they're equal.\n"))
 
         if "1" in inpt:
-            # Calculate Elo
+            # Calculate Elo if 1 wins
             element_a[2] = R_a + k*(1-E_a)
             element_b[2] = R_b + k*(0-E_b)
             # Increment counter
             element_a[1] += 1
             element_b[1] += 1
         elif "2" in inpt:
-            # Calculate elo
+            # Calculate elo if 2 wins
             element_b[2] = R_b + k*(1-E_b)
             element_a[2] = R_a + k*(0-E_a)
             # Increment counter
             element_a[1] += 1
             element_b[1] += 1
         elif "3" in inpt:
-            # Calculate elo
+            # Calculate elo if draw
             element_b[2] = R_b + k*(0.5-E_b)
             element_a[2] = R_a + k*(0.5-E_a)
             # Increment counter
